@@ -18,7 +18,7 @@
 
   environment.systemPackages = with pkgs; [
     mangohud       # FPS / frametime overlay
-    protonup-qt    # extra Proton / Wine builds
+    protonplus    # extra Proton / Wine builds
     heroic         # Epic, GOG, Amazon
     lutris         # everything else
   ];

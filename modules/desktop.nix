@@ -7,6 +7,8 @@
     inputs.noctalia-greeter.nixosModules.default
   ];
 
+  nixpkgs.overlays = [ inputs.helium-flake.overlays.default ];
+
   # ---------- Compositor ----------
   programs.hyprland = {
     enable = true;             # also sets up xdg-desktop-portal-hyprland
@@ -62,11 +64,11 @@
   ];
 
   # ---------- Desktop apps ----------
-  programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     kitty nautilus file-roller loupe mpv pavucontrol
     wl-clipboard playerctl brightnessctl
     adw-gtk3 papirus-icon-theme bibata-cursors
+    helium vesktop adwaita-icon-theme
   ];
 
   # ---------- Dotfiles, the no-home-manager way ----------
