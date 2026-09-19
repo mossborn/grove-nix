@@ -1,0 +1,8 @@
+# ~/nixos/dotfiles/noctalia/config.toml  (linked to ~/.config/noctalia)
+# GUI changes land in ~/.local/state/noctalia/settings.toml, which overrides this file.
+
+[shell]
+polkit_agent = true        # Noctalia handles password prompts (sudo GUIs, mounts)
+
+[theme]
+mode = "dark"
