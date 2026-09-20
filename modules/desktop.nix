@@ -68,7 +68,7 @@
     kitty nautilus file-roller loupe mpv pavucontrol
     wl-clipboard playerctl brightnessctl
     adw-gtk3 papirus-icon-theme bibata-cursors
-    helium vesktop adwaita-icon-theme
+    helium vesktop adwaita-icon-theme uwsm
   ];
 
   # ---------- Dotfiles, the no-home-manager way ----------

@@ -114,7 +114,7 @@
 
   environment.systemPackages = with pkgs; [
     git gh vim wget curl unzip file
-    btop fastfetch pciutils usbutils
+    btop microfetch pciutils usbutils
   ];
 
   # Keep the value your generated configuration.nix had. Never bump it later.
