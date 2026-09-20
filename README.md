@@ -7,7 +7,6 @@ My NixOS config. Flakes, btrfs, Hyprland + Noctalia.
 - `flake.nix` - inputs, username, hostname
 - `hosts/` - system config and hardware config
 - `modules/` - desktop, gaming, dev
-- `dotfiles/` - hyprland and noctalia configs, linked into `~/.config`
 
 ## Usage
 
