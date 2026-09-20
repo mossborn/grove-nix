@@ -6,4 +6,7 @@ hl.monitor({
   mode     = "highrr",   -- highest refresh rate; use "preferred" if it misbehaves
   position = "auto",
   scale    = "auto",
+  bitdepth = 10,
+  cm = "srgb",
+  vrr = 2,
 })
