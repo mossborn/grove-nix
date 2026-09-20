@@ -35,10 +35,9 @@
     let
       username = "moss";
       hostname = "grove";
-      dotfiles = "/home/${username}/nixos/dotfiles";
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs username hostname dotfiles; };
+        specialArgs = { inherit inputs username hostname ; };
         modules = [
 	  low-latency-layer.nixosModules.low-latency-layer
           ./hosts/nixbox/configuration.nix
