@@ -1,5 +1,5 @@
 # ~/nixos/hosts/nixbox/configuration.nix
-{ pkgs, username, hostname, ... }:
+{ pkgs, inputs, username, hostname, ... }:
 
 {
   # Generated on the target machine by nixos-generate-config; not in git until first install.
@@ -9,7 +9,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;   # keeps the ESP from filling up
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;     # newest amdgpu fixes
+
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
+  
+  # boot.kernelPackages = pkgs.linuxPackages_latest;     # newest amdgpu fixes
 
   # ---------- btrfs ----------
   # Adds to the subvol= options already in hardware-configuration.nix
@@ -101,9 +105,10 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
-    extra-substituters = [ "https://noctalia.cachix.org" ];
+    extra-substituters = [ "https://noctalia.cachix.org" "https://attic.xuyh0120.win/lantian" ];
     extra-trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
   };
   nix.gc = {
