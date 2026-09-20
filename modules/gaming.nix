@@ -16,6 +16,8 @@
   programs.gamemode.enable = true;
   users.groups.gamemode = { };         # harmless if the module already defines it
 
+  programs.low-latency-layer.enable = true;
+
   environment.systemPackages = with pkgs; [
     mangohud       # FPS / frametime overlay
     protonplus    # extra Proton / Wine builds

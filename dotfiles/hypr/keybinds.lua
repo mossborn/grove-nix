@@ -3,6 +3,7 @@ local mod, ipc = v.mainMod, v.ipc
 
 ---------------- APPS ----------------
 hl.bind(mod .. " + Return", hl.dsp.exec_cmd(v.terminal))
+hl.bind("SUPER + SHIFT + Return", hl.dsp.exec_cmd("kitty --class floating-kitty"))
 hl.bind(mod .. " + E",      hl.dsp.exec_cmd(v.files))
 hl.bind(mod .. " + B",      hl.dsp.exec_cmd(v.browser))
 
@@ -53,3 +54,9 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+hl.window_rule({
+    name  = "floating-kitty",
+    match = { class = "^(floating-kitty)$" },
+    float = true,
+})

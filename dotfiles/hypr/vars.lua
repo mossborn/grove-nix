@@ -4,7 +4,7 @@ return {
   mainMod  = "SUPER",
   terminal = "kitty",
   files    = "nautilus",
-  browser  = "firefox",
+  browser  = "helium",
   ipc      = "noctalia msg ",
 
   -- Used by looknfeel.lua and restored by gamemode.lua

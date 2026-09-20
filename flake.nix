@@ -19,10 +19,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    
+   
+    sonora = {
+      url = "github:sonorahq/sonora";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    low-latency-layer = {
+      url = "github:nmetschke/nixos-low-latency-layer";
+      inputs.nixpkgs.follows = "nixpkgs";  
+    };
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, low-latency-layer, ... }@inputs:
     let
       username = "moss";
       hostname = "grove";
@@ -31,6 +40,7 @@
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs username hostname dotfiles; };
         modules = [
+	  low-latency-layer.nixosModules.low-latency-layer
           ./hosts/nixbox/configuration.nix
           ./modules/desktop.nix
           ./modules/gaming.nix

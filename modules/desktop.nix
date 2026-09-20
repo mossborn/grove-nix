@@ -7,7 +7,8 @@
     inputs.noctalia-greeter.nixosModules.default
   ];
 
-  nixpkgs.overlays = [ inputs.helium-flake.overlays.default ];
+  nixpkgs.overlays = [ inputs.helium-flake.overlays.default
+                       inputs.sonora.overlays.default ];
 
   # ---------- Compositor ----------
   programs.hyprland = {
@@ -69,6 +70,7 @@
     wl-clipboard playerctl brightnessctl
     adw-gtk3 papirus-icon-theme bibata-cursors
     helium vesktop adwaita-icon-theme uwsm
+    sonora
   ];
 
   # ---------- Dotfiles, the no-home-manager way ----------

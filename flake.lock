@@ -54,6 +54,26 @@
         "type": "github"
       }
     },
+    "low-latency-layer": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788611254,
+        "narHash": "sha256-yPlgHCr2C+W5TMob2IgaPzR55w5UZ+0tTHHSLOtHCyo=",
+        "owner": "nmetschke",
+        "repo": "nixos-low-latency-layer",
+        "rev": "cca1e80203667350853508be9cfaf8206ecc32c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmetschke",
+        "repo": "nixos-low-latency-layer",
+        "type": "github"
+      }
+    },
     "nix-cachyos-kernel": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -177,10 +197,54 @@
     "root": {
       "inputs": {
         "helium-flake": "helium-flake",
+        "low-latency-layer": "low-latency-layer",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
-        "noctalia-greeter": "noctalia-greeter"
+        "noctalia-greeter": "noctalia-greeter",
+        "sonora": "sonora"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "sonora",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789196581,
+        "narHash": "sha256-yJr1Bt4fKkKIpPYbsKGqJ0VFdoDnURgRwuffmBQ2WzY=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "228ecefb6329d5a531b77b46b581a2f0c26ee056",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "sonora": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1789669032,
+        "narHash": "sha256-y/TfpBM4cWmi70BeiyUMR/sOqFuTdMmqXjrmnv9kLak=",
+        "owner": "sonorahq",
+        "repo": "sonora",
+        "rev": "a55c98057d98254985e4346a3de46ab77c299a94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sonorahq",
+        "repo": "sonora",
+        "type": "github"
       }
     }
   },
