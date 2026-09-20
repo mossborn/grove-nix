@@ -73,7 +73,7 @@
   services.fwupd.enable = true;           # firmware updates via fwupdmgr
 
   # ---------- Locale ----------  <-- CHANGE ME
-  time.timeZone = "America/New_York";
+  time.timeZone = "America/Denver";
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 
