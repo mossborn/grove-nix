@@ -202,7 +202,8 @@
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
-        "sonora": "sonora"
+        "sonora": "sonora",
+        "spotifast": "spotifast"
       }
     },
     "rust-overlay": {
@@ -218,6 +219,27 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "228ecefb6329d5a531b77b46b581a2f0c26ee056",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "spotifast",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787834454,
+        "narHash": "sha256-jXSvqn04IOecJCvSvl8+g3PsbDVNP6qKs6dKUs/b16k=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "dc2fd1acc537f3583744e1373597a5731ff7a6e3",
         "type": "github"
       },
       "original": {
@@ -244,6 +266,27 @@
       "original": {
         "owner": "sonorahq",
         "repo": "sonora",
+        "type": "github"
+      }
+    },
+    "spotifast": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay_2"
+      },
+      "locked": {
+        "lastModified": 1789916428,
+        "narHash": "sha256-rqXEdL1Tmchphakjm8PEbkxptmryolvAKf5RidFHZDw=",
+        "owner": "crmne",
+        "repo": "spotifast",
+        "rev": "ca1c856fedcff9662587a8f273605ad402640bdc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "crmne",
+        "repo": "spotifast",
         "type": "github"
       }
     }

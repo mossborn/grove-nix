@@ -25,6 +25,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    spotifast = {
+      url = "github:crmne/spotifast";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     low-latency-layer = {
       url = "github:nmetschke/nixos-low-latency-layer";
       inputs.nixpkgs.follows = "nixpkgs";  

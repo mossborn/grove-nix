@@ -1,5 +1,5 @@
 # ~/nixos/modules/desktop.nix
-{ inputs, pkgs, username, dotfiles, ... }:
+{ inputs, pkgs, username,  ... }:
 
 {
   imports = [
@@ -70,14 +70,8 @@
     wl-clipboard playerctl brightnessctl
     adw-gtk3 papirus-icon-theme bibata-cursors
     helium vesktop adwaita-icon-theme uwsm
-    sonora
-  ];
-
-  # ---------- Dotfiles, the no-home-manager way ----------
-  # L+ replaces whatever is there with a symlink into the repo.
-  systemd.tmpfiles.rules = [
-    "d  /home/${username}/.config          0755 ${username} users - -"
-    "L+ /home/${username}/.config/hypr     -    -           -     - ${dotfiles}/hypr"
-    "L+ /home/${username}/.config/noctalia -    -           -     - ${dotfiles}/noctalia"
-  ];
+    sonora qbittorrent
+  ] ++ [
+    inputs.spotifast.packages.${pkgs.system}.default
+  ]; 
 }

@@ -23,6 +23,9 @@
     protonplus    # extra Proton / Wine builds
     heroic         # Epic, GOG, Amazon
     lutris         # everything else
+    pcsx2          # ps2 emulation
+    retroarch      # emulation
+    prismlauncher
   ];
 
   # hardware.xpadneo.enable = true;   # uncomment for Xbox controllers over Bluetooth
